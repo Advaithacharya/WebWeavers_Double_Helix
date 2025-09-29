@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IEEE SB SMVITM — Achievements</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="navbar container">
+      <div class="nav-inner glass">
+        <a class="brand" href="index.html">
+          <img src="assets/img/ieee-logo.svg" alt="IEEE"/>
+          <span>IEEE SB SMVITM</span>
+        </a>
+        <nav class="nav-links">
+          <a href="home.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="team.html">Team</a>
+          <a class="active" href="achievements.html">Achievements</a>
+          <a href="publication.html">Publication</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section">
+      <section class="glass card">
+        <h1>Achievements</h1>
+        <p style="margin-top:8px;">Awards, recognitions, and milestones by our members.</p>
+      </section>
+
+      <section class="section">
+        <div class="glass card" style="padding:20px;">
+          <h3>Achievements</h3>
+          <ul id="pubAch" style="margin-top:10px; line-height:1.9;"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <div class="glass" style="padding:14px;">
+        <p>© <span id="year"></span> IEEE Student Branch, SMVITM.</p>
+      </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="assets/js/background.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+      (function(){
+        const ul = document.getElementById('pubAch');
+        if (!ul) return;
+        fetch('/api/achievements').then(r=>r.json()).then(d=>Array.isArray(d.achievements)?d.achievements:[]).then(items=>{
+          ul.innerHTML='';
+          for (const a of items.slice().reverse()) {
+            const li=document.createElement('li');
+            li.innerHTML = `<strong>${a.title}</strong>${a.description? ' — '+a.description:''}${a.link? ' — <a href=\"'+a.link+'\" target=\"_blank\">link</a>':''}`;
+            ul.appendChild(li);
+          }
+        }).catch(()=>{});
+      })();
+    </script>
+  </body>
+  </html>
+
+

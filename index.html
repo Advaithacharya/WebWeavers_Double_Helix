@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IEEE SMVITM — Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="navbar container">
+      <div class="nav-inner glass">
+        <a class="brand" href="index.html">
+          <img src="assets/img/ieee-logo.svg" alt="IEEE" onerror="this.style.display='none'"/>
+          <span>IEEE SB SMVITM</span>
+        </a>
+        <nav class="nav-links">
+          <a class="active" href="home.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="team.html">Team</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="publication.html">Publication</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section">
+      <section class="hero">
+        <div class="glass card">
+          <h1>Welcome to IEEE Student Branch, SMVITM</h1>
+          <p>
+            Fostering innovation, collaboration, and professional growth among engineering students.
+            Join our community to explore technology, organize impactful events, and publish your work.
+          </p>
+          <div class="cta">
+            <a class="btn btn-primary" href="home.html">Enter Website</a>
+            <a class="btn btn-secondary" href="about.html">Learn More</a>
+          </div>
+        </div>
+        <div class="glass card">
+          <h3>Upcoming Highlights</h3>
+          <ul style="margin-top:8px; line-height:1.8;">
+            <li>Industry talks, Workshops, Hackathons</li>
+            <li>Paper publications and project showcases</li>
+            <li>Networking with professionals and alumni</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid">
+          <div class="glass card">
+            <h3>Events</h3>
+            <p>Explore our past and upcoming events, photos, and outcomes.</p>
+          </div>
+          <div class="glass card">
+            <h3>Team</h3>
+            <p>Meet the dedicated student leaders and faculty advisors.</p>
+          </div>
+          <div class="glass card">
+            <h3>Publications</h3>
+            <p>Read articles, papers, and newsletters by our members.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <div class="glass" style="padding:14px;">
+        <p>© <span id="year"></span> IEEE Student Branch, SMVITM.</p>
+      </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="assets/js/background.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+  </html>
+
+
+

@@ -1,0 +1,34 @@
+{
+  "members": [
+    {
+      "email": "member@example.com",
+      "role": "member"
+    },
+    {
+      "email": "student@s.smvitm.ac.in",
+      "role": "member"
+    },
+    {
+      "email": "shettysanjeet654@gmail.com",
+      "role": "member",
+      "password": "3bfb6df481a287ad57a80226e951215818fdb61450bf5536de73c4d56b4a5159",
+      "name": "sanjeet"
+    },
+    {
+      "email": "advaith.23cs005@sode-edu.in",
+      "role": "member",
+      "password": "c26715101dc05f8ff300c46b7cbf5983d775a79e8791f390576f3ad9dc69bf45",
+      "name": "advaith"
+    }
+  ],
+  "bearers": [
+    {
+      "email": "chair@s.smvitm.ac.in",
+      "role": "bearer"
+    },
+    {
+      "email": "secretary@s.smvitm.ac.in",
+      "role": "bearer"
+    }
+  ]
+}

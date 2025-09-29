@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IEEE SB SMVITM — Login</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="navbar container">
+      <div class="nav-inner glass">
+        <a class="brand" href="index.html">
+          <img src="assets/img/ieee-logo.svg" alt="IEEE"/>
+          <span>IEEE SB SMVITM</span>
+        </a>
+        <nav class="nav-links">
+          <a href="home.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="team.html">Team</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="publication.html">Publication</a>
+          <a class="active" href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section" style="display:grid; place-items:center; min-height:60vh;">
+      <form id="loginForm" class="glass card" style="width:min(520px, 100%); padding:20px;">
+        <h1>Member Login</h1>
+        <p style="margin-top:8px;">Use your email. Bearers pick role for dashboard access.</p>
+
+        <div style="margin-top:12px; display:grid; gap:10px;">
+          <label>Email
+            <input type="email" name="email" required placeholder="name@s/..." style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+          </label>
+          <label>Password
+            <input type="password" name="password" required placeholder="••••••••" minlength="6" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+          </label>
+          <label>Role
+            <select name="role" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);">
+              <option value="member">Member</option>
+              <option value="bearer">Office Bearer</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-primary">Login</button>
+          <p id="loginMsg" style="color:#0b2540;"></p>
+        </div>
+      </form>
+    </main>
+
+    <footer class="footer container">
+      <div class="glass" style="padding:14px;">
+        <p>© <span id="year"></span> IEEE Student Branch, SMVITM.</p>
+      </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="assets/js/background.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+  </html>
+
+

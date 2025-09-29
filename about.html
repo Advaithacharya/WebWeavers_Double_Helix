@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IEEE SB SMVITM — About Us</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="navbar container">
+      <div class="nav-inner glass">
+        <a class="brand" href="index.html">
+          <img src="assets/img/ieee-logo.svg" alt="IEEE"/>
+          <span>IEEE SB SMVITM</span>
+        </a>
+        <nav class="nav-links">
+          <a href="home.html">Home</a>
+          <a class="active" href="about.html">About Us</a>
+          <a href="team.html">Team</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="publication.html">Publication</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section">
+      <section class="glass card">
+        <h1>About Us</h1>
+        <p style="margin-top:8px;">The IEEE Student Branch at SMVITM nurtures technological excellence and leadership.</p>
+      </section>
+
+      <section class="section grid">
+        <article class="glass card">
+          <h3>Mission</h3>
+          <p>Enable students to grow as professionals through learning, collaboration, and service.</p>
+        </article>
+        <article class="glass card">
+          <h3>Vision</h3>
+          <p>Empower innovators who advance technology for humanity.</p>
+        </article>
+        <article class="glass card">
+          <h3>What we do</h3>
+          <p>Workshops, technical talks, competitions, publications, and community projects.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <div class="glass" style="padding:14px;">
+        <p>© <span id="year"></span> IEEE Student Branch, SMVITM.</p>
+      </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="assets/js/background.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+  </html>
+
+

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IEEE SB SMVITM — Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="navbar container">
+      <div class="nav-inner glass">
+        <a class="brand" href="index.html">
+          <img src="assets/img/ieee-logo.svg" alt="IEEE"/>
+          <span>IEEE SB SMVITM</span>
+        </a>
+        <nav class="nav-links">
+          <a href="home.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="team.html">Team</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="publication.html">Publication</a>
+          <a href="login.html" id="logoutLink">Logout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section">
+      <section class="glass card">
+        <h1>Office Bearer Dashboard</h1>
+        <p style="margin-top:8px;">Upload event details and photographs. Members will be notified.</p>
+      </section>
+
+      <section class="section grid">
+        <form id="eventForm" class="glass card" style="grid-column: span 2; padding:20px;">
+          <h3>Create Event</h3>
+          <div style="display:grid; gap:10px; margin-top:10px;">
+            <label>Title
+              <input name="title" required placeholder="Event Title" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <label>Date
+              <input type="date" name="date" required style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <label>Venue
+              <input name="venue" required placeholder="Auditorium / Lab / ..." style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <label>Photos
+              <input type="file" id="photos" name="photos" accept="image/*" multiple />
+            </label>
+            <button class="btn btn-primary" type="submit">Save Event</button>
+            <p id="eventMsg"></p>
+          </div>
+        </form>
+
+        <div class="glass card" style="padding:20px;">
+          <h3>Recent Events</h3>
+          <ul id="eventsList" style="margin-top:10px; line-height:1.9;"></ul>
+        </div>
+
+        <form id="teamForm" class="glass card" style="grid-column: span 2; padding:20px;">
+          <h3>Manage Team</h3>
+          <div style="display:grid; gap:10px; margin-top:10px;">
+            <label>Name
+              <input name="name" placeholder="Member Name" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <label>Position
+              <input name="position" placeholder="Chair / Secretary / ..." style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <label>Department
+              <input name="department" placeholder="CSE / ECE / ..." style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <label>Email (optional)
+              <input name="email" type="email" placeholder="name@s.smvitm.ac.in" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <button class="btn btn-primary" type="submit">Add to Team</button>
+            <p id="teamMsg"></p>
+          </div>
+        </form>
+
+        <div class="glass card" style="padding:20px;">
+          <h3>Current Team</h3>
+          <ul id="teamList" style="margin-top:10px; line-height:1.9;"></ul>
+        </div>
+
+        <form id="onboardForm" class="glass card" style="grid-column: span 2; padding:20px;">
+          <h3>Onboard Member (send credentials via email)</h3>
+          <div style="display:grid; gap:10px; margin-top:10px;">
+            <label>Name
+              <input name="name" placeholder="Student Name" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <label>Email
+              <input name="email" type="email" required placeholder="student@s.smvitm.ac.in" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <label>Role
+              <select name="role" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);">
+                <option value="member">Member</option>
+                <option value="bearer">Office Bearer</option>
+              </select>
+            </label>
+            <button class="btn btn-primary" type="submit">Create & Send</button>
+            <p id="onboardMsg"></p>
+          </div>
+        </form>
+
+        <form id="achForm" class="glass card" style="grid-column: span 2; padding:20px;">
+          <h3>Post Achievement</h3>
+          <div style="display:grid; gap:10px; margin-top:10px;">
+            <label>Title
+              <input name="title" required placeholder="Achievement Title" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <label>Description
+              <textarea name="description" rows="3" placeholder="Brief description" style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"></textarea>
+            </label>
+            <label>Link (optional)
+              <input name="link" placeholder="https://..." style="width:100%; padding:10px; border-radius:10px; border:1px solid rgba(0,0,0,0.1);"/>
+            </label>
+            <label>Image (optional)
+              <input type="file" name="image" accept="image/*" />
+            </label>
+            <button class="btn btn-primary" type="submit">Publish</button>
+            <p id="achMsg"></p>
+          </div>
+        </form>
+
+        <div class="glass card" style="padding:20px;">
+          <h3>Recent Achievements</h3>
+          <ul id="achList" style="margin-top:10px; line-height:1.9;"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <div class="glass" style="padding:14px;">
+        <p>© <span id="year"></span> IEEE Student Branch, SMVITM.</p>
+      </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="assets/js/background.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+  </html>
+
+

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IEEE SB SMVITM — Publication</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="navbar container">
+      <div class="nav-inner glass">
+        <a class="brand" href="index.html">
+          <img src="assets/img/ieee-logo.svg" alt="IEEE"/>
+          <span>IEEE SB SMVITM</span>
+        </a>
+        <nav class="nav-links">
+          <a href="home.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="team.html">Team</a>
+          <a href="achievements.html">Achievements</a>
+          <a class="active" href="publication.html">Publication</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container section">
+      <section class="glass card">
+        <h1>Publication</h1>
+        <p style="margin-top:8px;">Articles, newsletters, and papers authored by our members.</p>
+      </section>
+
+      <section class="section">
+        <div class="grid">
+          <div class="glass card">
+            <h3>Newsletter</h3>
+            <p>Download latest branch newsletter and archives.</p>
+          </div>
+          <div class="glass card">
+            <h3>Articles</h3>
+            <p>Browse technical articles and editorials.</p>
+          </div>
+          <div class="glass card">
+            <h3>Papers</h3>
+            <p>Published research with links and citations.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <div class="glass" style="padding:14px;">
+        <p>© <span id="year"></span> IEEE Student Branch, SMVITM.</p>
+      </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="assets/js/background.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+  </html>
+
+
